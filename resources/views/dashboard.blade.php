@@ -14,11 +14,22 @@
                     @foreach (Auth::user()->plantas as $planta)
                         <div class="border border-black">
                             {{$planta}}
-                        </div>
+                        </div> 
+
+
+                        <a href="{{route('plantas.create')}}">Adicionar</a> 
+                        <a class="bg-green-500 hover:bg-green-700  text-white font-bold mx-2 py-1 px-4 rounded"
+                                        href="{{ route('plantas.edit', [$planta->id]) }}">Edit</a>
+
+                                        <form action="{{route('plantas.destroy',$planta->id)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded">Delete</button>
+                                        </form>
+
                     @endforeach
                 
-                        <a href="{{route('plantas.create')}}">Adicionar</a>
-                 
+                      
                 </div>
             </div>
         </div>

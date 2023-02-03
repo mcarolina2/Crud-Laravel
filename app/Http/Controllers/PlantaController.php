@@ -72,8 +72,8 @@ class PlantaController extends Controller
      */
     public function edit(Planta $planta)
     {
-        $planta = Planta::where('id', $id)->first();
-        return view('planta-edit', compact('planta-edit'));
+        $planta = Planta::where('id', $planta)->first();
+        return view('planta-edit');
     }
 
     /**
@@ -96,7 +96,7 @@ class PlantaController extends Controller
      */
     public function destroy(Planta $planta)
     {
-        Planta::where('id',$id)->delete();
+        Planta::where('id',$planta)->delete();
       return back();
     }
 }
