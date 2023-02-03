@@ -6,8 +6,10 @@
     </x-slot>
     
     <div class="py-12">
-    <h1 class="text-lg"> You're logged in! </h1>
+    
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <h1 class="text-lg"> You're logged in! </h1>
+    <a href="{{route('plantas.create')}}">Adicionar</a> 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                    <h1 class="text-lg">Essas são as suas plantas</h1>
@@ -18,9 +20,11 @@
 
 
                         <a href="{{route('plantas.create')}}">Adicionar</a> 
+                        <br>
                         <a class="bg-green-500 hover:bg-green-700  text-white font-bold mx-2 py-1 px-4 rounded"
-                                        href="{{ route('plantas.edit', [$planta->id]) }}">Edit</a>
-
+                                        href="{{ route('plantas.edit', $planta->id) }}">Edit</a>
+                                        <br>    <br> 
+                            
                                         <form action="{{route('plantas.destroy',$planta->id)}}" method="POST">
                                             @csrf
                                             @method('delete')

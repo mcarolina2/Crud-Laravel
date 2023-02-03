@@ -38,16 +38,6 @@
                 </div>
             </div> 
 
-            <a href="{{route('plantas.create')}}">Adicionar</a>
-                        <a class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded"
-                                                href="{{ route('plantas.edit', [$planta->id]) }}">Editar</a>
-
-                                            <form action="{{route('plantas.destroy',$planta->id)}}" method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit"
-                                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded">Deletar</button>
-                                            </form>
         </div>
 
 

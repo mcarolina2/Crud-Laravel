@@ -29,6 +29,8 @@
                                     class="" /> 
 
                                     <button>Enviar</button>
+
+                                    <a href="{{route('dashboard')}}">Voltar</a> 
                             </div>
                         </form>
                     </div>

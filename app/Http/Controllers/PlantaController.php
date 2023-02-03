@@ -70,9 +70,9 @@ class PlantaController extends Controller
      * @param  \App\Models\Planta  $planta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Planta $planta)
+    public function edit($id)
     {
-        $planta = Planta::where('id', $planta)->first();
+        $planta = Planta::where('id', $id)->first();
         return view('planta-edit');
     }
 
@@ -94,9 +94,9 @@ class PlantaController extends Controller
      * @param  \App\Models\Planta  $planta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Planta $planta)
+    public function destroy($id)
     {
-        Planta::where('id',$planta)->delete();
+        Planta::where('id',$id)->delete();
       return back();
     }
 }
