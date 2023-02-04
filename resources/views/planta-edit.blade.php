@@ -9,24 +9,24 @@
                 <div class=" flex flex-row justify-center gap-2">
                     <div class="flex flex-col ">
                     <h1>Editar Plantas</h1>
-                        <form action="{{ route('plantas.edit')}}" method="POST">
+                        <form action="{{ route('plantas.update', $planta->id)}}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="flex flex-col">
                                 <label for="nomedaplanta">{{ __('Nome Da Planta') }}</label>
-                                <input type="text" placeholder="{{ __('Digite o Nome Da Planta ') }}" name="nomedaplanta"
+                                <input type="text" value="{{$planta->nomedaplanta}}" name="nomedaplanta"
                                     class="" /> 
 
                                     <label for="descricao">{{ __('Descrição') }}</label>
-                                <input type="text" placeholder="{{ __('Digite uma descrição') }}" name="descricao"
+                                <input type="text" value="{{$planta->descricao}}" name="descricao"
                                     class="" /> 
 
                                     <label for="local">{{ __('Local') }}</label>
-                                <input type="text" placeholder="{{ __('Digite o local do plantio') }}" name="local"
+                                <input type="text" value="{{$planta->local}}" name="local"
                                     class="" /> 
 
                                     <label for="datadoplantio">{{ __('Data Do Plantio') }}</label>
-                                <input type="date" " name="datadoplantio"
+                                <input type="date" value="{{date('Y-m-d', strtotime($planta->datadoplantio))}}" name="datadoplantio"
                                     class="" /> 
 
                                     <div class="flex flex-col">

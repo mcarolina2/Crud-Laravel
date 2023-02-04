@@ -73,7 +73,7 @@ class PlantaController extends Controller
     public function edit($id)
     {
         $planta = Planta::where('id', $id)->first();
-        return view('planta-edit');
+        return view('planta-edit', compact('planta'));
     }
 
     /**
@@ -85,8 +85,16 @@ class PlantaController extends Controller
      */
     public function update(Request $request, Planta $planta)
     {
-        //
-    }
+          $data=[
+            'nomedaplanta' => $request->input ('nomedaplanta'),
+            'descricao' => $request->input ('descricao'), 
+            'local' => $request->input ('local'),
+            'datadoplantio' => $request->input ('datadoplantio'),
+            'user_id' => auth()->user()->id
+          ];
+          $planta->update($data);
+          return redirect('/dashboard');
+        }
 
     /**
      * Remove the specified resource from storage.
