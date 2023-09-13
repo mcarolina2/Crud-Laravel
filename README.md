@@ -1,5 +1,5 @@
 ## Resumo 
-* Esse crud foi desenvolvido como a última avaliação da materia de desenvolvimento web 2 do curso de Informatica Para Internet do IFPE(Instituto Federal De Pernambuco)
+* Esse crud foi desenvolvido como a última avaliação da matéria de desenvolvimento web 2 do curso de Informática Para Internet do IFPE(Instituto Federal De Pernambuco).
 
 
 
